@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataRec Marketplace – Top Software Tools for Sale</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <i class="fa-solid fa-database"></i>
+      <span>DataRec<em>Market</em></span>
+    </a>
+    <div class="nav-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="globalSearch" placeholder="Search apps & tools…" />
+    </div>
+    <div class="nav-actions">
+      <button class="btn-ghost" id="cartBtn">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="btn-primary">Sign In</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fa-solid fa-bolt"></i> #1 Software Marketplace</div>
+    <h1>Recover, Protect &amp;<br /><span class="gradient-text">Power Your Workflow</span></h1>
+    <p>The best-selling data recovery tools, productivity suites, and desktop utilities — all in one place. Trusted by 2M+ professionals worldwide.</p>
+    <div class="hero-cta">
+      <button class="btn-primary btn-lg" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+        <i class="fa-solid fa-store"></i> Browse All Tools
+      </button>
+      <button class="btn-outline btn-lg" onclick="filterByCategory('data-recovery')">
+        <i class="fa-solid fa-hard-drive"></i> Data Recovery
+      </button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>50+</strong><span>Software Tools</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>2M+</strong><span>Happy Users</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>4.8★</strong><span>Avg Rating</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>24/7</strong><span>Support</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="floating-card card-1">
+      <i class="fa-solid fa-shield-halved"></i>
+      <div><strong>256-bit</strong><span>Encryption</span></div>
+    </div>
+    <div class="floating-card card-2">
+      <i class="fa-solid fa-rotate"></i>
+      <div><strong>99.9%</strong><span>Recovery Rate</span></div>
+    </div>
+    <div class="floating-card card-3">
+      <i class="fa-solid fa-download"></i>
+      <div><strong>Instant</strong><span>Download</span></div>
+    </div>
+    <div class="hero-disk">
+      <div class="disk-ring ring-1"></div>
+      <div class="disk-ring ring-2"></div>
+      <div class="disk-ring ring-3"></div>
+      <div class="disk-core"><i class="fa-solid fa-database"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CATEGORY FILTERS ========== -->
+<section class="categories-section">
+  <div class="container">
+    <div class="categories-scroll" id="categoryFilters">
+      <button class="cat-btn active" data-cat="all" onclick="filterByCategory('all')">
+        <i class="fa-solid fa-th-large"></i> All Apps
+      </button>
+      <button class="cat-btn" data-cat="data-recovery" onclick="filterByCategory('data-recovery')">
+        <i class="fa-solid fa-hard-drive"></i> Data Recovery
+      </button>
+      <button class="cat-btn" data-cat="productivity" onclick="filterByCategory('productivity')">
+        <i class="fa-solid fa-rocket"></i> Productivity
+      </button>
+      <button class="cat-btn" data-cat="security" onclick="filterByCategory('security')">
+        <i class="fa-solid fa-shield-halved"></i> Security
+      </button>
+      <button class="cat-btn" data-cat="system" onclick="filterByCategory('system')">
+        <i class="fa-solid fa-gear"></i> System Tools
+      </button>
+      <button class="cat-btn" data-cat="media" onclick="filterByCategory('media')">
+        <i class="fa-solid fa-photo-film"></i> Media & Design
+      </button>
+      <button class="cat-btn" data-cat="backup" onclick="filterByCategory('backup')">
+        <i class="fa-solid fa-cloud-arrow-up"></i> Backup
+      </button>
+    </div>
+    <div class="sort-bar">
+      <span>Sort by:</span>
+      <select id="sortSelect" onchange="sortProducts()">
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="rating">Highest Rated</option>
+        <option value="popular">Most Popular</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURED BANNER ========== -->
+<section class="featured-banner container">
+  <div class="featured-inner">
+    <div class="featured-badge">HOT DEAL</div>
+    <div class="featured-text">
+      <h2>Disk Drill Pro — Editor's Choice</h2>
+      <p>World's #1 rated data recovery software. Recover deleted files, photos, videos from any drive — <strong>now 40% off</strong>!</p>
+      <div class="featured-meta">
+        <span class="rating-stars">★★★★★</span>
+        <span>4.9/5 &nbsp;·&nbsp; 120,000+ reviews</span>
+      </div>
+    </div>
+    <div class="featured-price">
+      <span class="old-price">$149</span>
+      <span class="new-price">$89<small>/yr</small></span>
+      <button class="btn-primary" onclick="addToCart(0)">Get It Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRODUCTS GRID ========== -->
+<section class="products-section container" id="products">
+  <div class="section-header">
+    <h2>Browse Software Marketplace</h2>
+    <p id="productCount">Showing all 20 products</p>
+  </div>
+  <div class="products-grid" id="productsGrid">
+    <!-- Cards injected by JS -->
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"Disk Drill saved 5 years of family photos after my hard drive crashed. Incredible software. Worth every penny!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">JM</div>
+          <div><strong>James M.</strong><span>Photographer</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"EaseUS recovered my entire project folder in under 5 minutes. The interface is so easy even my parents could use it."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SR</div>
+          <div><strong>Sarah R.</strong><span>Freelance Designer</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★☆</div>
+        <p>"R-Studio is the go-to for RAID recovery. Professional-grade tool at a fair price. Our whole IT team uses it."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">KP</div>
+          <div><strong>Kevin P.</strong><span>IT Administrator</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"Wondershare Recoverit repaired 3 corrupted wedding videos that other tools couldn't touch. Amazing video recovery!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AL</div>
+          <div><strong>Amanda L.</strong><span>Videographer</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TRUST BADGES ========== -->
+<section class="trust-section container">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <i class="fa-solid fa-lock"></i>
+      <div><strong>Secure Checkout</strong><span>SSL encrypted payments</span></div>
+    </div>
+    <div class="trust-item">
+      <i class="fa-solid fa-rotate-left"></i>
+      <div><strong>30-Day Refund</strong><span>No questions asked</span></div>
+    </div>
+    <div class="trust-item">
+      <i class="fa-solid fa-download"></i>
+      <div><strong>Instant Download</strong><span>Access in seconds</span></div>
+    </div>
+    <div class="trust-item">
+      <i class="fa-solid fa-headset"></i>
+      <div><strong>24/7 Support</strong><span>Expert help anytime</span></div>
+    </div>
+    <div class="trust-item">
+      <i class="fa-solid fa-certificate"></i>
+      <div><strong>Genuine License</strong><span>Official product keys</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><i class="fa-solid fa-database"></i><span>DataRec<em>Market</em></span></div>
+        <p>Your trusted marketplace for data recovery tools, productivity apps, and software utilities. Helping users protect and recover their data since 2020.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Data Recovery</a></li>
+          <li><a href="#">Productivity</a></li>
+          <li><a href="#">Security Tools</a></li>
+          <li><a href="#">System Utilities</a></li>
+          <li><a href="#">Media Tools</a></li>
+          <li><a href="#">Backup Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Affiliate Program</a></li>
+          <li><a href="#">Partner With Us</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DataRecMarket. All rights reserved. Logos and trademarks are property of their respective owners.</p>
+      <div class="payment-icons">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-paypal"></i>
+        <i class="fa-brands fa-cc-stripe"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== PRODUCT MODAL ========== -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal" id="productModal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- ========== CART SIDEBAR ========== -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3>
+    <button onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty"><i class="fa-solid fa-box-open"></i><p>Your cart is empty</p></div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total">
+      <span>Total</span>
+      <strong id="cartTotal">$0.00</strong>
+    </div>
+    <button class="btn-primary btn-full">
+      <i class="fa-solid fa-lock"></i> Secure Checkout
+    </button>
+    <p class="cart-disclaimer">30-day money-back guarantee · SSL Secured</p>
+  </div>
+</aside>
+
+<!-- ========== TOAST ========== -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
