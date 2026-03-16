@@ -3,251 +3,444 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DataRec Marketplace – Top Software Tools for Sale</title>
+  <title>SoftVault — Premium Software Marketplace</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-<!-- ========== NAVBAR ========== -->
+<!-- ════════════════════════════════════════════════════
+     ANNOUNCEMENT BAR
+════════════════════════════════════════════════════ -->
+<div class="announce-bar">
+  <i class="fa-solid fa-bolt"></i>
+  <span>Summer Sale — Up to <strong>60% off</strong> on 30+ products this week only!</span>
+  <a href="#">Shop Now →</a>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════ -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="#" class="logo">
-      <i class="fa-solid fa-database"></i>
-      <span>DataRec<em>Market</em></span>
+      <div class="logo-mark"><i class="fa-solid fa-layer-group"></i></div>
+      <span>Soft<em>Vault</em></span>
     </a>
+
     <div class="nav-search">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" id="globalSearch" placeholder="Search apps & tools…" />
+      <input type="text" id="globalSearch" placeholder="Search 24+ software tools…" autocomplete="off" />
+      <kbd>⌘K</kbd>
     </div>
+
+    <div class="nav-links">
+      <a href="#products" onclick="filterByCategory('all')">All Products</a>
+      <a href="#" onclick="filterByCategory('data-recovery')">Recovery</a>
+      <a href="#" onclick="filterByCategory('ai-tools')">AI Tools</a>
+      <a href="#" onclick="filterByCategory('security')">Security</a>
+      <div class="nav-dropdown">
+        <a href="#">More <i class="fa-solid fa-chevron-down" style="font-size:10px"></i></a>
+        <div class="dropdown-menu">
+          <a href="#" onclick="filterByCategory('productivity')"><i class="fa-solid fa-rocket"></i> Productivity</a>
+          <a href="#" onclick="filterByCategory('media')"><i class="fa-solid fa-photo-film"></i> Media & Design</a>
+          <a href="#" onclick="filterByCategory('system')"><i class="fa-solid fa-gear"></i> System Tools</a>
+          <a href="#" onclick="filterByCategory('backup')"><i class="fa-solid fa-cloud-arrow-up"></i> Backup</a>
+          <a href="#" onclick="filterByCategory('pdf-docs')"><i class="fa-solid fa-file-pdf"></i> PDF & Docs</a>
+          <a href="#" onclick="filterByCategory('business')"><i class="fa-solid fa-briefcase"></i> Business</a>
+        </div>
+      </div>
+    </div>
+
     <div class="nav-actions">
-      <button class="btn-ghost" id="cartBtn">
+      <button class="btn-ghost" id="cartBtn" title="Shopping Cart">
         <i class="fa-solid fa-cart-shopping"></i>
         <span class="cart-count" id="cartCount">0</span>
       </button>
-      <button class="btn-primary">Sign In</button>
+      <button class="btn-outline nav-btn" onclick="showToast('Sign in coming soon!')">Sign In</button>
+      <button class="btn-primary nav-btn">Get Started</button>
     </div>
   </div>
 </nav>
 
-<!-- ========== HERO ========== -->
+<!-- ════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════ -->
 <section class="hero">
-  <div class="hero-bg-grid"></div>
-  <div class="hero-content">
-    <div class="hero-badge"><i class="fa-solid fa-bolt"></i> #1 Software Marketplace</div>
-    <h1>Recover, Protect &amp;<br /><span class="gradient-text">Power Your Workflow</span></h1>
-    <p>The best-selling data recovery tools, productivity suites, and desktop utilities — all in one place. Trusted by 2M+ professionals worldwide.</p>
-    <div class="hero-cta">
-      <button class="btn-primary btn-lg" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-        <i class="fa-solid fa-store"></i> Browse All Tools
-      </button>
-      <button class="btn-outline btn-lg" onclick="filterByCategory('data-recovery')">
-        <i class="fa-solid fa-hard-drive"></i> Data Recovery
-      </button>
+  <div class="hero-particles" id="heroParticles"></div>
+  <div class="hero-inner container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        24 Professional Software Tools
+        <span class="eyebrow-sep">·</span>
+        One Marketplace
+      </div>
+      <h1>The Smartest Software<br /><span class="gradient-text">You'll Ever Buy</span></h1>
+      <p>From data recovery and AI writing assistants to video editors, VPNs, and PDF tools — every category covered. Built by indie developers, priced for everyone.</p>
+      <div class="hero-cta">
+        <button class="btn-primary btn-xl" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+          <i class="fa-solid fa-store"></i> Browse All Software
+        </button>
+        <button class="btn-ghost btn-xl" onclick="filterByCategory('ai-tools')">
+          <i class="fa-solid fa-robot"></i> Explore AI Tools
+        </button>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-avatars">
+          <div class="avatar" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">JM</div>
+          <div class="avatar" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">SR</div>
+          <div class="avatar" style="background:linear-gradient(135deg,#10b981,#3b82f6)">KP</div>
+          <div class="avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">AL</div>
+          <div class="avatar" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)">+</div>
+        </div>
+        <span><strong>2.4M+</strong> developers & creators trust SoftVault</span>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div class="stat"><strong>50+</strong><span>Software Tools</span></div>
-      <div class="stat-divider"></div>
-      <div class="stat"><strong>2M+</strong><span>Happy Users</span></div>
-      <div class="stat-divider"></div>
-      <div class="stat"><strong>4.8★</strong><span>Avg Rating</span></div>
-      <div class="stat-divider"></div>
-      <div class="stat"><strong>24/7</strong><span>Support</span></div>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="floating-card card-1">
-      <i class="fa-solid fa-shield-halved"></i>
-      <div><strong>256-bit</strong><span>Encryption</span></div>
-    </div>
-    <div class="floating-card card-2">
-      <i class="fa-solid fa-rotate"></i>
-      <div><strong>99.9%</strong><span>Recovery Rate</span></div>
-    </div>
-    <div class="floating-card card-3">
-      <i class="fa-solid fa-download"></i>
-      <div><strong>Instant</strong><span>Download</span></div>
-    </div>
-    <div class="hero-disk">
-      <div class="disk-ring ring-1"></div>
-      <div class="disk-ring ring-2"></div>
-      <div class="disk-ring ring-3"></div>
-      <div class="disk-core"><i class="fa-solid fa-database"></i></div>
+
+    <div class="hero-right">
+      <!-- Animated app grid mockup -->
+      <div class="app-grid">
+        <div class="app-tile tile-blue" style="--delay:0s">
+          <i class="fa-solid fa-hard-drive"></i>
+          <span>RecoverX</span>
+          <div class="tile-glow"></div>
+        </div>
+        <div class="app-tile tile-purple" style="--delay:0.1s">
+          <i class="fa-solid fa-robot"></i>
+          <span>WordMind</span>
+          <div class="tile-glow"></div>
+        </div>
+        <div class="app-tile tile-green" style="--delay:0.2s">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>GuardCore</span>
+          <div class="tile-glow"></div>
+        </div>
+        <div class="app-tile tile-orange" style="--delay:0.3s">
+          <i class="fa-solid fa-clapperboard"></i>
+          <span>ClipForge</span>
+          <div class="tile-glow"></div>
+        </div>
+        <div class="app-tile tile-pink" style="--delay:0.4s">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>DocForge</span>
+          <div class="tile-glow"></div>
+        </div>
+        <div class="app-tile tile-teal" style="--delay:0.5s">
+          <i class="fa-solid fa-key"></i>
+          <span>VaultKey</span>
+          <div class="tile-glow"></div>
+        </div>
+        <div class="app-tile tile-yellow" style="--delay:0.6s">
+          <i class="fa-solid fa-rocket"></i>
+          <span>FlowDesk</span>
+          <div class="tile-glow"></div>
+        </div>
+        <div class="app-tile tile-red" style="--delay:0.7s">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <span>CloudVault</span>
+          <div class="tile-glow"></div>
+        </div>
+        <div class="app-tile tile-indigo" style="--delay:0.8s">
+          <i class="fa-solid fa-palette"></i>
+          <span>DesignFlow</span>
+          <div class="tile-glow"></div>
+        </div>
+      </div>
+      <div class="hero-floating-stats">
+        <div class="hf-stat">
+          <i class="fa-solid fa-star" style="color:#f59e0b"></i>
+          <span><strong>4.9</strong> avg rating</span>
+        </div>
+        <div class="hf-stat">
+          <i class="fa-solid fa-download" style="color:#10b981"></i>
+          <span><strong>8.2M+</strong> downloads</span>
+        </div>
+        <div class="hf-stat">
+          <i class="fa-solid fa-rotate-left" style="color:#3b82f6"></i>
+          <span><strong>30-day</strong> refund</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ========== CATEGORY FILTERS ========== -->
-<section class="categories-section">
+<!-- ════════════════════════════════════════════════════
+     CATEGORY PILLS
+════════════════════════════════════════════════════ -->
+<section class="category-bar" id="categoryBar">
   <div class="container">
-    <div class="categories-scroll" id="categoryFilters">
-      <button class="cat-btn active" data-cat="all" onclick="filterByCategory('all')">
-        <i class="fa-solid fa-th-large"></i> All Apps
+    <div class="cat-pills" id="categoryFilters">
+      <button class="cat-pill active" data-cat="all" onclick="filterByCategory('all')">
+        <i class="fa-solid fa-border-all"></i> All
       </button>
-      <button class="cat-btn" data-cat="data-recovery" onclick="filterByCategory('data-recovery')">
+      <button class="cat-pill" data-cat="data-recovery" onclick="filterByCategory('data-recovery')">
         <i class="fa-solid fa-hard-drive"></i> Data Recovery
       </button>
-      <button class="cat-btn" data-cat="productivity" onclick="filterByCategory('productivity')">
-        <i class="fa-solid fa-rocket"></i> Productivity
+      <button class="cat-pill" data-cat="ai-tools" onclick="filterByCategory('ai-tools')">
+        <i class="fa-solid fa-robot"></i> AI Tools
       </button>
-      <button class="cat-btn" data-cat="security" onclick="filterByCategory('security')">
+      <button class="cat-pill" data-cat="security" onclick="filterByCategory('security')">
         <i class="fa-solid fa-shield-halved"></i> Security
       </button>
-      <button class="cat-btn" data-cat="system" onclick="filterByCategory('system')">
-        <i class="fa-solid fa-gear"></i> System Tools
+      <button class="cat-pill" data-cat="productivity" onclick="filterByCategory('productivity')">
+        <i class="fa-solid fa-rocket"></i> Productivity
       </button>
-      <button class="cat-btn" data-cat="media" onclick="filterByCategory('media')">
+      <button class="cat-pill" data-cat="media" onclick="filterByCategory('media')">
         <i class="fa-solid fa-photo-film"></i> Media & Design
       </button>
-      <button class="cat-btn" data-cat="backup" onclick="filterByCategory('backup')">
+      <button class="cat-pill" data-cat="system" onclick="filterByCategory('system')">
+        <i class="fa-solid fa-gear"></i> System Tools
+      </button>
+      <button class="cat-pill" data-cat="backup" onclick="filterByCategory('backup')">
         <i class="fa-solid fa-cloud-arrow-up"></i> Backup
       </button>
+      <button class="cat-pill" data-cat="pdf-docs" onclick="filterByCategory('pdf-docs')">
+        <i class="fa-solid fa-file-lines"></i> PDF & Docs
+      </button>
+      <button class="cat-pill" data-cat="business" onclick="filterByCategory('business')">
+        <i class="fa-solid fa-briefcase"></i> Business
+      </button>
     </div>
-    <div class="sort-bar">
-      <span>Sort by:</span>
+    <div class="sort-controls">
       <select id="sortSelect" onchange="sortProducts()">
         <option value="featured">Featured</option>
-        <option value="price-asc">Price: Low to High</option>
-        <option value="price-desc">Price: High to Low</option>
-        <option value="rating">Highest Rated</option>
-        <option value="popular">Most Popular</option>
+        <option value="price-asc">Price ↑</option>
+        <option value="price-desc">Price ↓</option>
+        <option value="rating">Top Rated</option>
+        <option value="newest">Newest</option>
       </select>
     </div>
   </div>
 </section>
 
-<!-- ========== FEATURED BANNER ========== -->
-<section class="featured-banner container">
-  <div class="featured-inner">
-    <div class="featured-badge">HOT DEAL</div>
-    <div class="featured-text">
-      <h2>Disk Drill Pro — Editor's Choice</h2>
-      <p>World's #1 rated data recovery software. Recover deleted files, photos, videos from any drive — <strong>now 40% off</strong>!</p>
-      <div class="featured-meta">
-        <span class="rating-stars">★★★★★</span>
-        <span>4.9/5 &nbsp;·&nbsp; 120,000+ reviews</span>
-      </div>
-    </div>
-    <div class="featured-price">
-      <span class="old-price">$149</span>
-      <span class="new-price">$89<small>/yr</small></span>
-      <button class="btn-primary" onclick="addToCart(0)">Get It Now</button>
-    </div>
-  </div>
+<!-- ════════════════════════════════════════════════════
+     FEATURED HERO PRODUCT
+════════════════════════════════════════════════════ -->
+<section class="featured-strip container" id="featuredStrip">
+  <!-- Injected by JS -->
 </section>
 
-<!-- ========== PRODUCTS GRID ========== -->
-<section class="products-section container" id="products">
-  <div class="section-header">
-    <h2>Browse Software Marketplace</h2>
-    <p id="productCount">Showing all 20 products</p>
+<!-- ════════════════════════════════════════════════════
+     PRODUCTS GRID
+════════════════════════════════════════════════════ -->
+<section class="products-wrap container" id="products">
+  <div class="products-header">
+    <div>
+      <h2>Software Marketplace</h2>
+      <p id="productCount">Loading products…</p>
+    </div>
+    <div class="view-toggle">
+      <button class="view-btn active" id="gridViewBtn" onclick="setView('grid')" title="Grid view">
+        <i class="fa-solid fa-grid-2"></i>
+      </button>
+      <button class="view-btn" id="listViewBtn" onclick="setView('list')" title="List view">
+        <i class="fa-solid fa-list"></i>
+      </button>
+    </div>
   </div>
-  <div class="products-grid" id="productsGrid">
-    <!-- Cards injected by JS -->
-  </div>
+  <div class="products-grid" id="productsGrid"></div>
 </section>
 
-<!-- ========== TESTIMONIALS ========== -->
-<section class="testimonials-section">
+<!-- ════════════════════════════════════════════════════
+     WHY SOFTVAULT
+════════════════════════════════════════════════════ -->
+<section class="why-section">
   <div class="container">
-    <h2 class="section-title">What Our Customers Say</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p>"Disk Drill saved 5 years of family photos after my hard drive crashed. Incredible software. Worth every penny!"</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">JM</div>
-          <div><strong>James M.</strong><span>Photographer</span></div>
+    <div class="why-header">
+      <h2>Why <span class="gradient-text">SoftVault</span>?</h2>
+      <p>Everything you need from a software marketplace — none of the bloat.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon" style="background:linear-gradient(135deg,#1e3a5f,#0f2040)">
+          <i class="fa-solid fa-flask" style="color:#60a5fa"></i>
+        </div>
+        <h3>Indie-Built Quality</h3>
+        <p>Every tool is built from scratch by dedicated developers who use it themselves — no bloatware, no filler features.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" style="background:linear-gradient(135deg,#1a0f30,#0f0820)">
+          <i class="fa-solid fa-tags" style="color:#a78bfa"></i>
+        </div>
+        <h3>Fair Pricing</h3>
+        <p>Transparent one-time and subscription pricing. No hidden fees, no surprise renewals, no enterprise price walls.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" style="background:linear-gradient(135deg,#0a2a18,#041210)">
+          <i class="fa-solid fa-rotate-left" style="color:#34d399"></i>
+        </div>
+        <h3>30-Day Money Back</h3>
+        <p>Not satisfied? Get a full refund within 30 days, no questions asked. We stand behind every product we sell.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" style="background:linear-gradient(135deg,#2a1505,#150a02)">
+          <i class="fa-solid fa-bolt" style="color:#fbbf24"></i>
+        </div>
+        <h3>Instant Delivery</h3>
+        <p>Download your software immediately after purchase. License keys delivered to your email in seconds.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" style="background:linear-gradient(135deg,#1a0515,#0d0210)">
+          <i class="fa-solid fa-headset" style="color:#f472b6"></i>
+        </div>
+        <h3>Real Human Support</h3>
+        <p>Talk to actual developers who built the software. No bots, no outsourced support — real answers, fast.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" style="background:linear-gradient(135deg,#0f1a35,#060c1a)">
+          <i class="fa-solid fa-arrows-rotate" style="color:#38bdf8"></i>
+        </div>
+        <h3>Free Lifetime Updates</h3>
+        <p>Perpetual license products include all future updates at no extra cost. Your software keeps getting better.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     SOCIAL PROOF
+════════════════════════════════════════════════════ -->
+<section class="proof-section">
+  <div class="container">
+    <div class="proof-numbers">
+      <div class="proof-num">
+        <strong class="count-up" data-target="2400000">0</strong>
+        <span>Downloads</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-num">
+        <strong class="count-up" data-target="24">0</strong>
+        <span>Products</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-num">
+        <strong class="count-up" data-target="98">0</strong>
+        <span>% Satisfaction</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-num">
+        <strong class="count-up" data-target="150">0</strong>
+        <span>Countries</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     REVIEWS
+════════════════════════════════════════════════════ -->
+<section class="reviews-section">
+  <div class="container">
+    <h2 class="section-title">Loved by <span class="gradient-text">real users</span></h2>
+    <div class="reviews-grid" id="reviewsGrid">
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <span class="review-date">Dec 2024</span>
+        </div>
+        <p>"RecoverX Pro recovered 4 years of family photos from a dead hard drive in under 20 minutes. The deep scan is insane. Worth 10x the price."</p>
+        <div class="review-author">
+          <div class="r-avatar" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">JM</div>
+          <div><strong>James Mitchell</strong><span>Photographer, Texas</span></div>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p>"EaseUS recovered my entire project folder in under 5 minutes. The interface is so easy even my parents could use it."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">SR</div>
-          <div><strong>Sarah R.</strong><span>Freelance Designer</span></div>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <span class="review-date">Jan 2025</span>
+        </div>
+        <p>"WordMind AI replaced Grammarly AND ChatGPT for me. The writing suggestions are on another level — it actually understands my tone and style."</p>
+        <div class="review-author">
+          <div class="r-avatar" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">SR</div>
+          <div><strong>Sarah Reynolds</strong><span>Content Strategist, NYC</span></div>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★☆</div>
-        <p>"R-Studio is the go-to for RAID recovery. Professional-grade tool at a fair price. Our whole IT team uses it."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">KP</div>
-          <div><strong>Kevin P.</strong><span>IT Administrator</span></div>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <span class="review-date">Feb 2025</span>
+        </div>
+        <p>"VaultKey is the cleanest password manager I've ever used. Clean UI, zero-knowledge encryption, and the browser extension is actually fast."</p>
+        <div class="review-author">
+          <div class="r-avatar" style="background:linear-gradient(135deg,#10b981,#3b82f6)">KP</div>
+          <div><strong>Kevin Park</strong><span>DevOps Engineer, Seoul</span></div>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p>"Wondershare Recoverit repaired 3 corrupted wedding videos that other tools couldn't touch. Amazing video recovery!"</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">AL</div>
-          <div><strong>Amanda L.</strong><span>Videographer</span></div>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <span class="review-date">Mar 2025</span>
+        </div>
+        <p>"ClipForge is genuinely DaVinci-level for the price. Used it to edit my entire YouTube channel. The AI background removal feature alone is worth it."</p>
+        <div class="review-author">
+          <div class="r-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">AL</div>
+          <div><strong>Amanda Liu</strong><span>YouTuber, 280K subscribers</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== TRUST BADGES ========== -->
-<section class="trust-section container">
-  <div class="trust-grid">
-    <div class="trust-item">
-      <i class="fa-solid fa-lock"></i>
-      <div><strong>Secure Checkout</strong><span>SSL encrypted payments</span></div>
+<!-- ════════════════════════════════════════════════════
+     NEWSLETTER
+════════════════════════════════════════════════════ -->
+<section class="newsletter-section container">
+  <div class="newsletter-box">
+    <div class="nl-left">
+      <h3>Get deals before anyone else</h3>
+      <p>Join 180,000+ subscribers. Flash deals, new releases, and exclusive coupon codes — straight to your inbox.</p>
     </div>
-    <div class="trust-item">
-      <i class="fa-solid fa-rotate-left"></i>
-      <div><strong>30-Day Refund</strong><span>No questions asked</span></div>
-    </div>
-    <div class="trust-item">
-      <i class="fa-solid fa-download"></i>
-      <div><strong>Instant Download</strong><span>Access in seconds</span></div>
-    </div>
-    <div class="trust-item">
-      <i class="fa-solid fa-headset"></i>
-      <div><strong>24/7 Support</strong><span>Expert help anytime</span></div>
-    </div>
-    <div class="trust-item">
-      <i class="fa-solid fa-certificate"></i>
-      <div><strong>Genuine License</strong><span>Official product keys</span></div>
-    </div>
+    <form class="nl-form" onsubmit="return nlSubmit(event)">
+      <input type="email" placeholder="Enter your email address" required />
+      <button class="btn-primary" type="submit">Subscribe Free</button>
+    </form>
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
+<!-- ════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo"><i class="fa-solid fa-database"></i><span>DataRec<em>Market</em></span></div>
-        <p>Your trusted marketplace for data recovery tools, productivity apps, and software utilities. Helping users protect and recover their data since 2020.</p>
+        <div class="logo" style="margin-bottom:14px">
+          <div class="logo-mark"><i class="fa-solid fa-layer-group"></i></div>
+          <span>Soft<em>Vault</em></span>
+        </div>
+        <p>A marketplace for premium, indie-built software. From data recovery to AI tools, we've got every workflow covered.</p>
         <div class="footer-social">
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#"><i class="fa-brands fa-github"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" title="Discord"><i class="fa-brands fa-discord"></i></a>
         </div>
       </div>
       <div class="footer-col">
         <h4>Categories</h4>
         <ul>
-          <li><a href="#">Data Recovery</a></li>
-          <li><a href="#">Productivity</a></li>
-          <li><a href="#">Security Tools</a></li>
-          <li><a href="#">System Utilities</a></li>
-          <li><a href="#">Media Tools</a></li>
-          <li><a href="#">Backup Solutions</a></li>
+          <li><a href="#" onclick="filterByCategory('data-recovery')">Data Recovery</a></li>
+          <li><a href="#" onclick="filterByCategory('ai-tools')">AI Tools</a></li>
+          <li><a href="#" onclick="filterByCategory('security')">Security & Privacy</a></li>
+          <li><a href="#" onclick="filterByCategory('productivity')">Productivity</a></li>
+          <li><a href="#" onclick="filterByCategory('media')">Media & Design</a></li>
+          <li><a href="#" onclick="filterByCategory('system')">System Utilities</a></li>
+          <li><a href="#" onclick="filterByCategory('backup')">Backup Solutions</a></li>
+          <li><a href="#" onclick="filterByCategory('business')">Business Tools</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="#">About SoftVault</a></li>
+          <li><a href="#">Blog & Tutorials</a></li>
+          <li><a href="#">Submit Your App</a></li>
           <li><a href="#">Affiliate Program</a></li>
-          <li><a href="#">Partner With Us</a></li>
-          <li><a href="#">Press</a></li>
+          <li><a href="#">Press Kit</a></li>
+          <li><a href="#">Roadmap</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -255,6 +448,7 @@
         <ul>
           <li><a href="#">Help Center</a></li>
           <li><a href="#">Contact Us</a></li>
+          <li><a href="#">License FAQ</a></li>
           <li><a href="#">Refund Policy</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms of Service</a></li>
@@ -262,48 +456,67 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 DataRecMarket. All rights reserved. Logos and trademarks are property of their respective owners.</p>
+      <p>&copy; 2025 SoftVault. All original software and brand names are property of their respective owners.</p>
       <div class="payment-icons">
-        <i class="fa-brands fa-cc-visa"></i>
-        <i class="fa-brands fa-cc-mastercard"></i>
-        <i class="fa-brands fa-cc-paypal"></i>
-        <i class="fa-brands fa-cc-stripe"></i>
+        <i class="fa-brands fa-cc-visa" title="Visa"></i>
+        <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+        <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+        <i class="fa-brands fa-cc-stripe" title="Stripe"></i>
+        <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- ========== PRODUCT MODAL ========== -->
+<!-- ════════════════════════════════════════════════════
+     PRODUCT MODAL
+════════════════════════════════════════════════════ -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
-  <div class="modal" id="productModal" onclick="event.stopPropagation()">
+  <div class="modal" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
     <div id="modalContent"></div>
   </div>
 </div>
 
-<!-- ========== CART SIDEBAR ========== -->
+<!-- ════════════════════════════════════════════════════
+     CART SIDEBAR
+════════════════════════════════════════════════════ -->
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 <aside class="cart-sidebar" id="cartSidebar">
   <div class="cart-header">
-    <h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3>
-    <button onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+    <div>
+      <h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3>
+      <span id="cartItemCount">0 items</span>
+    </div>
+    <button onclick="closeCart()" title="Close cart"><i class="fa-solid fa-xmark"></i></button>
   </div>
   <div class="cart-items" id="cartItems">
-    <div class="cart-empty"><i class="fa-solid fa-box-open"></i><p>Your cart is empty</p></div>
+    <div class="cart-empty">
+      <i class="fa-solid fa-box-open"></i>
+      <p>Your cart is empty</p>
+      <button class="btn-primary" onclick="closeCart()" style="margin-top:12px;padding:9px 20px;font-size:13px">Browse Products</button>
+    </div>
   </div>
   <div class="cart-footer" id="cartFooter" style="display:none">
-    <div class="cart-total">
-      <span>Total</span>
+    <div class="cart-savings" id="cartSavings"></div>
+    <div class="cart-total-row">
+      <span>Subtotal</span>
       <strong id="cartTotal">$0.00</strong>
     </div>
     <button class="btn-primary btn-full">
       <i class="fa-solid fa-lock"></i> Secure Checkout
     </button>
-    <p class="cart-disclaimer">30-day money-back guarantee · SSL Secured</p>
+    <div class="cart-badges">
+      <span><i class="fa-solid fa-shield-halved"></i> SSL Secured</span>
+      <span><i class="fa-solid fa-rotate-left"></i> 30-day refund</span>
+      <span><i class="fa-solid fa-bolt"></i> Instant delivery</span>
+    </div>
   </div>
 </aside>
 
-<!-- ========== TOAST ========== -->
+<!-- ════════════════════════════════════════════════════
+     TOAST
+════════════════════════════════════════════════════ -->
 <div class="toast" id="toast"></div>
 
 <script src="script.js"></script>
