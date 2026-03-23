@@ -1,20 +1,20 @@
 /* ═══════════════════════════════════════════════════════
    SoftVault Marketplace — script.js
-   24 original software products across 9 categories
+   8 original recovery & utility tools
 ═══════════════════════════════════════════════════════ */
 
 // ─────────────────────────────────────────────────────
-//  PRODUCT DATA  (all original, inspired by top sellers)
+//  PRODUCT DATA
 // ─────────────────────────────────────────────────────
 const products = [
 
-  /* ══ DATA RECOVERY ══════════════════════════════════ */
+  /* ══ 1. HDD/SSD DATA RECOVERY ═══════════════════════ */
   {
     id: 0,
-    name: "RecoverX Pro",
-    tagline: "Deep-scan data recovery for any drive or device",
+    name: "DriveRevive",
+    tagline: "Deep-scan HDD & SSD data recovery for Windows",
     category: "data-recovery",
-    platforms: ["Windows", "Mac"],
+    platforms: ["Windows"],
     icon: "fa-solid fa-hard-drive",
     iconBg: "#0d1e38", iconColor: "#60a5fa",
     bannerBg: "linear-gradient(135deg,#060f1e 0%,#0d1e38 100%)",
@@ -22,53 +22,57 @@ const products = [
     rating: 4.9, reviews: 142000,
     price: 79, oldPrice: 129, period: "yr",
     featured: true,
-    description: "RecoverX Pro uses adaptive multi-pass scan algorithms to recover deleted, formatted, or corrupted files from hard drives, SSDs, USBs, SD cards, and even smartphones. Preview files before recovering — no blind restores.",
+    description: "DriveRevive uses multi-pass adaptive scan algorithms to recover deleted, formatted, or corrupted files from HDDs and SSDs of any brand. Supports NTFS, FAT32, exFAT, and RAW file systems. Preview files live before committing to recovery — no blind restores.",
     features: [
-      "500+ recoverable file formats",
       "Quick Scan & Deep Scan modes",
       "Live file preview before recovery",
-      "Encrypted & BitLocker drive support",
-      "iOS & Android device recovery",
-      "Disk health monitoring (S.M.A.R.T.)",
-      "Byte-level disk cloning & imaging",
-      "Automatic recovery scheduler"
+      "NTFS, FAT32, exFAT & RAW support",
+      "BitLocker encrypted drive recovery",
+      "S.M.A.R.T. disk health monitoring",
+      "Byte-level disk imaging & cloning",
+      "500+ recoverable file formats",
+      "Scheduled & automatic recovery"
     ],
-    tags: ["Deep Scan", "500+ Formats", "Preview", "Mobile"],
+    tags: ["Deep Scan", "Preview Files", "BitLocker", "500+ Formats"],
     popular: 99
   },
+
+  /* ══ 2. USB/SD CARD RECOVERY ════════════════════════ */
   {
     id: 1,
-    name: "DriveRescue",
-    tagline: "RAID array & NAS specialist recovery tool",
+    name: "FlashRescue",
+    tagline: "USB drive & SD/microSD card data recovery",
     category: "data-recovery",
-    platforms: ["Windows", "Mac", "Linux"],
-    icon: "fa-solid fa-server",
-    iconBg: "#1a1005", iconColor: "#fbbf24",
-    bannerBg: "linear-gradient(135deg,#0d0803 0%,#1a1005 100%)",
-    badges: ["pro"],
-    rating: 4.7, reviews: 38400,
-    price: 59, oldPrice: 89, period: "one-time",
+    platforms: ["Windows"],
+    icon: "fa-solid fa-memory",
+    iconBg: "#08200f", iconColor: "#4ade80",
+    bannerBg: "linear-gradient(135deg,#04100a 0%,#08200f 100%)",
+    badges: ["popular"],
+    rating: 4.8, reviews: 98000,
+    price: 49, oldPrice: 79, period: "one-time",
     featured: false,
-    description: "DriveRescue is purpose-built for complex storage environments. Reconstruct degraded RAID 0/1/5/6/10 arrays, recover from NAS appliances, and access data over a local network. Includes a hex-level disk editor for manual sector inspection.",
+    description: "FlashRescue is built specifically for flash-based storage. Whether your USB drive was accidentally formatted, your SD card shows as RAW, or your memory card is unrecognised after a camera error — FlashRescue recovers photos, videos, and files in minutes.",
     features: [
-      "RAID 0/1/5/6/10 reconstruction",
-      "NAS & network drive support",
-      "Hex editor for manual inspection",
-      "Disk image mount & browse",
-      "Cross-platform (Win/Mac/Linux)",
-      "NTFS, FAT32, exFAT, HFS+, Ext4",
-      "Remote recovery over LAN",
-      "Unlimited session save & resume"
+      "USB 2.0 / 3.0 / 3.1 & USB-C support",
+      "SD, microSD, CF & XQD card recovery",
+      "RAW partition & unformatted drive scan",
+      "Camera memory card deep scan",
+      "Thumbnail gallery preview",
+      "Drone & action cam footage recovery",
+      "FAT16, FAT32, exFAT, NTFS support",
+      "One-time license, lifetime use"
     ],
-    tags: ["RAID", "NAS", "Linux", "Hex Editor"],
-    popular: 74
+    tags: ["USB & SD Cards", "RAW Partitions", "Camera Cards", "One-time"],
+    popular: 88
   },
+
+  /* ══ 3. PHOTO CORRUPTED RECOVERY ════════════════════ */
   {
     id: 2,
     name: "PhotoRevive",
-    tagline: "Intelligent photo & video file recovery",
+    tagline: "Repair & recover corrupted photo files of any format",
     category: "data-recovery",
-    platforms: ["Windows", "Mac"],
+    platforms: ["Windows"],
     icon: "fa-solid fa-images",
     iconBg: "#200a30", iconColor: "#c084fc",
     bannerBg: "linear-gradient(135deg,#130520 0%,#200a30 100%)",
@@ -76,603 +80,166 @@ const products = [
     rating: 4.8, reviews: 56700,
     price: 49, oldPrice: 79, period: "yr",
     featured: false,
-    description: "PhotoRevive is laser-focused on recovering photos and videos. It supports every camera RAW format, drone footage codecs, and action camera files. The gallery-style browser lets you preview thumbnails of all recoverable media before committing to a restore.",
+    description: "PhotoRevive repairs and recovers broken, truncated, or corrupted image files that other tools give up on. It rebuilds image headers, reconstructs missing color data, and recovers files deleted from any storage source. Supports every RAW format from 500+ camera models.",
     features: [
-      "500+ RAW camera formats",
-      "Drone & GoPro footage support",
-      "AI-powered corrupted photo repair",
-      "Gallery thumbnail browser",
-      "HEIC, HEIF, WebP support",
-      "Video fragment reconstruction",
-      "SD card deep scan",
-      "Batch recovery with filters"
+      "500+ camera RAW format support",
+      "Corrupted JPEG / PNG repair engine",
+      "HEIC, HEIF, WebP & AVIF recovery",
+      "Thumbnail-guided gallery browser",
+      "Batch repair for 1000s of files",
+      "AI-assisted pixel reconstruction",
+      "Before/after comparison preview",
+      "Recover from any drive or card"
     ],
-    tags: ["RAW Formats", "Drone", "AI Repair", "Gallery View"],
+    tags: ["500+ RAW Formats", "JPEG Repair", "Batch Mode", "AI Repair"],
     popular: 85
   },
 
-  /* ══ AI TOOLS ════════════════════════════════════════ */
+  /* ══ 4. VIDEO CORRUPTED RECOVERY ════════════════════ */
   {
     id: 3,
-    name: "WordMind AI",
-    tagline: "AI writing assistant, grammar fixer & co-pilot",
-    category: "ai-tools",
-    platforms: ["Web", "Windows", "Mac"],
-    icon: "fa-solid fa-wand-magic-sparkles",
-    iconBg: "#1a0530", iconColor: "#e879f9",
-    bannerBg: "linear-gradient(135deg,#0e0218 0%,#1a0530 100%)",
-    badges: ["hot", "ai"],
-    rating: 4.9, reviews: 320000,
-    price: 14.99, oldPrice: 22, period: "mo",
-    featured: false,
-    description: "WordMind AI combines a context-aware grammar engine with a full generative writing co-pilot. It understands your writing style, suggests improvements that sound like you, and can draft emails, articles, reports, and social posts from a single prompt.",
-    features: [
-      "Context-aware grammar & tone correction",
-      "AI content generation (GPT-4 class)",
-      "Paragraph rewriting & simplification",
-      "Plagiarism checker included",
-      "Brand voice learning",
-      "50+ language support",
-      "Chrome & Firefox extensions",
-      "Google Docs & Notion integration"
-    ],
-    tags: ["Grammar", "AI Writer", "Plagiarism Check", "50+ Languages"],
-    popular: 97
-  },
-  {
-    id: 4,
-    name: "DocuAI",
-    tagline: "Chat with any document — PDF, Word, or URL",
-    category: "ai-tools",
-    platforms: ["Web"],
-    icon: "fa-solid fa-file-circle-check",
-    iconBg: "#0a2030", iconColor: "#38bdf8",
-    bannerBg: "linear-gradient(135deg,#041018 0%,#0a2030 100%)",
-    badges: ["new", "ai"],
-    rating: 4.8, reviews: 87000,
-    price: 19, oldPrice: null, period: "mo",
-    featured: false,
-    description: "Upload any document — PDF, Word, PowerPoint, CSV, or paste a URL — and chat with it in plain English. DocuAI extracts key insights, answers questions, creates summaries, and generates action items. Perfect for researchers, lawyers, and analysts.",
-    features: [
-      "Chat with PDFs, Docs, Sheets, URLs",
-      "Multi-document cross-referencing",
-      "Automatic executive summary",
-      "Q&A with source citations",
-      "Export chats & insights as PDF",
-      "100MB file size limit per upload",
-      "Team collaboration workspace",
-      "SOC2 Type II compliant"
-    ],
-    tags: ["PDF Chat", "Summarize", "Cite Sources", "Team Collab"],
-    popular: 88
-  },
-  {
-    id: 5,
-    name: "ResumeAI",
-    tagline: "Build job-winning resumes in minutes with AI",
-    category: "ai-tools",
-    platforms: ["Web"],
-    icon: "fa-solid fa-file-user",
-    iconBg: "#0a2818", iconColor: "#34d399",
-    bannerBg: "linear-gradient(135deg,#051510 0%,#0a2818 100%)",
-    badges: ["popular", "ai"],
-    rating: 4.7, reviews: 205000,
-    price: 9.99, oldPrice: 19.99, period: "mo",
-    featured: false,
-    description: "ResumeAI analyzes job descriptions and tailors your resume to pass ATS scanners with the right keywords. Choose from 80+ ATS-friendly templates, get AI-written bullet points, and see your match score before applying. Land more interviews, faster.",
-    features: [
-      "ATS keyword match scoring",
-      "AI-written bullet points",
-      "80+ ATS-friendly templates",
-      "LinkedIn profile import",
-      "Cover letter generator",
-      "Job description analyzer",
-      "One-click PDF export",
-      "Interview prep questions"
-    ],
-    tags: ["ATS Optimizer", "AI Bullets", "80+ Templates", "Cover Letter"],
-    popular: 94
-  },
-
-  /* ══ SECURITY ════════════════════════════════════════ */
-  {
-    id: 6,
-    name: "VaultKey",
-    tagline: "Zero-knowledge password manager & 2FA vault",
-    category: "security",
-    platforms: ["Windows", "Mac", "Web"],
-    icon: "fa-solid fa-key",
-    iconBg: "#08200f", iconColor: "#4ade80",
-    bannerBg: "linear-gradient(135deg,#04100a 0%,#08200f 100%)",
-    badges: ["popular"],
-    rating: 4.8, reviews: 178000,
-    price: 2.99, oldPrice: 4.99, period: "mo",
-    featured: false,
-    description: "VaultKey uses AES-256 + XChaCha20 encryption with a zero-knowledge architecture — your master password never leaves your device. Stores passwords, passkeys, secure notes, credit cards, and 2FA codes. Breached password alerts in real time.",
-    features: [
-      "AES-256 + XChaCha20 encryption",
-      "Zero-knowledge architecture",
-      "2FA & passkey storage",
-      "Breach monitoring (HaveIBeenPwned)",
-      "Password health dashboard",
-      "Secure sharing with family/team",
-      "Browser extensions for all browsers",
-      "Emergency access contacts"
-    ],
-    tags: ["Zero-Knowledge", "2FA", "Breach Alerts", "Passkeys"],
-    popular: 92
-  },
-  {
-    id: 7,
-    name: "ShieldVPN",
-    tagline: "Private, no-log VPN — 8,000+ servers worldwide",
-    category: "security",
-    platforms: ["Windows", "Mac"],
-    icon: "fa-solid fa-earth-americas",
-    iconBg: "#051528", iconColor: "#60a5fa",
-    bannerBg: "linear-gradient(135deg,#030d18 0%,#051528 100%)",
-    badges: ["sale", "popular"],
-    rating: 4.7, reviews: 560000,
-    price: 2.49, oldPrice: 9.99, period: "mo",
-    featured: false,
-    description: "ShieldVPN routes your traffic through 8,000+ servers in 120+ countries using WireGuard and OpenVPN protocols. A strict audited no-logs policy, split tunneling, an automatic kill switch, and built-in tracker & ad blocker keep your browsing private.",
-    features: [
-      "8,000+ servers in 120+ countries",
-      "WireGuard & OpenVPN protocols",
-      "Audited no-logs policy",
-      "Built-in tracker & ad blocker",
-      "Split tunneling per-app",
-      "Automatic kill switch",
-      "10 simultaneous devices",
-      "P2P & streaming optimized servers"
-    ],
-    tags: ["8000+ Servers", "No Logs", "WireGuard", "Ad Blocker"],
-    popular: 95
-  },
-  {
-    id: 8,
-    name: "GuardCore",
-    tagline: "AI-powered antivirus & real-time ransomware shield",
-    category: "security",
-    platforms: ["Windows", "Mac"],
-    icon: "fa-solid fa-shield-virus",
-    iconBg: "#200808", iconColor: "#f87171",
-    bannerBg: "linear-gradient(135deg,#100404 0%,#200808 100%)",
-    badges: ["hot"],
-    rating: 4.6, reviews: 290000,
-    price: 29.99, oldPrice: 49.99, period: "yr",
-    featured: false,
-    description: "GuardCore uses an AI behavioral engine to catch zero-day threats that signature-based tools miss. Ransomware rollback restores files encrypted by an attack within seconds. Includes a hardened browser extension, webcam guard, and microphone monitor.",
-    features: [
-      "AI behavioral threat detection",
-      "Ransomware rollback (instant restore)",
-      "Zero-day exploit protection",
-      "Webcam & microphone guard",
-      "Hardened browser extension",
-      "Dark web identity monitoring",
-      "Lightweight — <1% CPU overhead",
-      "Up to 5 devices per license"
-    ],
-    tags: ["AI Detection", "Ransomware Rollback", "Zero-Day", "Dark Web"],
-    popular: 88
-  },
-
-  /* ══ PRODUCTIVITY ════════════════════════════════════ */
-  {
-    id: 9,
-    name: "FlowDesk",
-    tagline: "All-in-one project management & team workspace",
-    category: "productivity",
-    platforms: ["Web", "Windows", "Mac"],
-    icon: "fa-solid fa-rocket",
-    iconBg: "#100a28", iconColor: "#a78bfa",
-    bannerBg: "linear-gradient(135deg,#080518 0%,#100a28 100%)",
-    badges: ["popular"],
-    rating: 4.8, reviews: 210000,
-    price: 12, oldPrice: 18, period: "user/mo",
-    featured: false,
-    description: "FlowDesk replaces 6 productivity apps with one integrated workspace. Manage tasks on Kanban boards, track time, build wikis, run sprints, and chat — all without switching tabs. AI-powered automations eliminate repetitive work and keep teams in sync.",
-    features: [
-      "Kanban, List, Gantt & Calendar views",
-      "Built-in time tracking",
-      "Team wikis & rich docs",
-      "AI automation builder",
-      "Sprint planning & backlog",
-      "Goal & OKR tracking",
-      "1,000+ integrations (Slack, GitHub, etc.)",
-      "Custom workflows per project"
-    ],
-    tags: ["Kanban", "Gantt", "AI Automations", "Time Tracking"],
-    popular: 91
-  },
-  {
-    id: 10,
-    name: "TaskForge",
-    tagline: "Smart personal task manager with AI scheduling",
-    category: "productivity",
-    platforms: ["Web", "Windows", "Mac"],
-    icon: "fa-solid fa-list-check",
-    iconBg: "#082010", iconColor: "#6ee7b7",
-    bannerBg: "linear-gradient(135deg,#040e08 0%,#082010 100%)",
-    badges: ["new"],
-    rating: 4.7, reviews: 98000,
-    price: 8, oldPrice: null, period: "mo",
-    featured: false,
-    description: "TaskForge uses AI to auto-schedule your to-do list based on deadlines, priorities, and your actual working patterns. Includes a Pomodoro timer, habit tracker, daily review system, and natural language task creation ('meeting Monday at 3pm').",
-    features: [
-      "AI auto-scheduling engine",
-      "Natural language task input",
-      "Pomodoro timer built-in",
-      "Habit & streak tracker",
-      "Daily review & reflection",
-      "Calendar sync (Google, Outlook)",
-      "Recurring task templates",
-      "Focus mode (no distractions)"
-    ],
-    tags: ["AI Scheduling", "Pomodoro", "Habits", "NLP Input"],
-    popular: 83
-  },
-
-  /* ══ MEDIA & DESIGN ══════════════════════════════════ */
-  {
-    id: 11,
-    name: "ClipForge",
-    tagline: "Professional video editor with AI background removal",
-    category: "media",
-    platforms: ["Windows", "Mac"],
-    icon: "fa-solid fa-clapperboard",
+    name: "VideoRescue",
+    tagline: "Repair & recover corrupted or broken video files",
+    category: "data-recovery",
+    platforms: ["Windows"],
+    icon: "fa-solid fa-film",
     iconBg: "#1a0820", iconColor: "#d946ef",
     bannerBg: "linear-gradient(135deg,#0d0412 0%,#1a0820 100%)",
-    badges: ["hot", "sale"],
-    rating: 4.8, reviews: 175000,
-    price: 59, oldPrice: 119, period: "one-time",
-    featured: false,
-    description: "ClipForge delivers a full non-linear editing timeline, color grading tools, Fairlight-style audio mixer, and AI features that used to cost thousands. One-time purchase, no subscription. Export to 4K/8K, H.265, ProRes, and every major format.",
-    features: [
-      "Multi-track non-linear timeline",
-      "AI background removal (real-time)",
-      "Color grading with scopes",
-      "Audio mixer & noise removal",
-      "Motion graphics & titles",
-      "4K/8K export — all codecs",
-      "Screen recording built-in",
-      "One-time license, lifetime updates"
-    ],
-    tags: ["4K/8K", "AI Background", "Color Grade", "One-time"],
-    popular: 89
-  },
-  {
-    id: 12,
-    name: "PixelBrush",
-    tagline: "Non-destructive photo editor with AI retouching",
-    category: "media",
-    platforms: ["Windows", "Mac"],
-    icon: "fa-solid fa-paintbrush",
-    iconBg: "#050f28", iconColor: "#93c5fd",
-    bannerBg: "linear-gradient(135deg,#030818 0%,#050f28 100%)",
-    badges: ["new"],
-    rating: 4.7, reviews: 134000,
-    price: 49, oldPrice: 79, period: "yr",
-    featured: false,
-    description: "PixelBrush is a fully non-destructive photo editor that reads and exports every major RAW format. AI-powered tools include sky replacement, subject masking, skin retouching, and generative fill. Layers, blend modes, and masks work exactly as you'd expect.",
-    features: [
-      "Non-destructive layer editing",
-      "700+ RAW camera format support",
-      "AI sky replacement",
-      "AI subject & object masking",
-      "Generative Fill (AI object creation)",
-      "HDR & panoramic merge",
-      "Batch export with presets",
-      "Lightroom catalog importer"
-    ],
-    tags: ["RAW Editing", "AI Masking", "Generative Fill", "Layers"],
-    popular: 86
-  },
-  {
-    id: 13,
-    name: "DesignFlow",
-    tagline: "Drag-and-drop design tool for non-designers",
-    category: "media",
-    platforms: ["Web"],
-    icon: "fa-solid fa-palette",
-    iconBg: "#200512", iconColor: "#fb7185",
-    bannerBg: "linear-gradient(135deg,#10020a 0%,#200512 100%)",
-    badges: ["popular"],
-    rating: 4.8, reviews: 890000,
-    price: 12.99, oldPrice: 19.99, period: "mo",
-    featured: false,
-    description: "DesignFlow gives everyone design superpowers. Choose from 200,000+ templates, a 150M+ asset library, and AI tools that generate complete designs from text prompts. Built-in brand kit ensures every asset matches your brand colors, fonts, and logo.",
-    features: [
-      "200,000+ professionally made templates",
-      "150M+ stock photos, icons & videos",
-      "AI design generation from text",
-      "Brand Kit (colors, fonts, logos)",
-      "Magic Background Remover",
-      "Social media post scheduler",
-      "Presentation mode built-in",
-      "Team collaboration & approvals"
-    ],
-    tags: ["200K Templates", "AI Generation", "Brand Kit", "Scheduler"],
-    popular: 96
-  },
-
-  /* ══ SYSTEM TOOLS ════════════════════════════════════ */
-  {
-    id: 14,
-    name: "CleanCore",
-    tagline: "PC optimizer, junk cleaner & startup manager",
-    category: "system",
-    platforms: ["Windows", "Mac"],
-    icon: "fa-solid fa-broom",
-    iconBg: "#0f1808", iconColor: "#86efac",
-    bannerBg: "linear-gradient(135deg,#070e04 0%,#0f1808 100%)",
-    badges: ["popular"],
-    rating: 4.5, reviews: 1250000,
-    price: 24.99, oldPrice: 39.99, period: "yr",
-    featured: false,
-    description: "CleanCore finds and removes gigabytes of junk: browser caches, broken registry entries, duplicate files, leftover installers, and log files. The startup manager shows exactly what's slowing your boot. Real-time monitor alerts you when storage drops low.",
-    features: [
-      "Deep junk file analysis",
-      "Registry cleaner & fixer",
-      "Startup & background app manager",
-      "Duplicate file finder & remover",
-      "Browser privacy cleaner",
-      "Software uninstaller (leftover remover)",
-      "Real-time storage monitor",
-      "Scheduled auto-cleaning"
-    ],
-    tags: ["Registry", "Junk Cleaner", "Duplicates", "Startup"],
-    popular: 87
-  },
-  {
-    id: 15,
-    name: "DiskMaster",
-    tagline: "Advanced partition manager & SSD migration tool",
-    category: "system",
-    platforms: ["Windows"],
-    icon: "fa-solid fa-table-cells-large",
-    iconBg: "#1a0e05", iconColor: "#fb923c",
-    bannerBg: "linear-gradient(135deg,#0e0703 0%,#1a0e05 100%)",
     badges: ["pro"],
-    rating: 4.6, reviews: 42000,
-    price: 49, oldPrice: 69, period: "one-time",
+    rating: 4.7, reviews: 43000,
+    price: 59, oldPrice: 89, period: "one-time",
     featured: false,
-    description: "DiskMaster handles every partition operation without touching your data. Resize, move, merge, split, and convert partitions. Migrate your OS to a new SSD in under 10 minutes. Bootable recovery media lets you manage disks before Windows even starts.",
+    description: "VideoRescue fixes unplayable, stuttering, or partially recorded video files. It repairs broken MP4, MOV, AVI, MKV, and other container formats by reconstructing missing headers, syncing audio/video tracks, and salvaging frames from damaged footage.",
     features: [
-      "Resize & move partitions (no data loss)",
-      "OS migration to SSD/NVMe",
-      "MBR ↔ GPT conversion",
-      "Disk clone & byte-for-byte copy",
-      "Partition recovery scanner",
-      "Dynamic disk support",
-      "Bootable WinPE media creator",
-      "Disk benchmark tool"
+      "MP4, MOV, AVI, MKV, FLV repair",
+      "4K / 8K footage repair support",
+      "Broken header reconstruction",
+      "Audio/video track re-sync",
+      "Frame-by-frame fragment salvage",
+      "GoPro, DJI & Sony camera support",
+      "Preview repaired footage before saving",
+      "Batch repair multiple files at once"
     ],
-    tags: ["SSD Migration", "MBR/GPT", "Clone", "Bootable"],
-    popular: 72
-  },
-  {
-    id: 16,
-    name: "ScreenCast Pro",
-    tagline: "Screen recorder, webcam capture & video trimmer",
-    category: "system",
-    platforms: ["Windows", "Mac"],
-    icon: "fa-solid fa-circle-dot",
-    iconBg: "#200808", iconColor: "#f87171",
-    bannerBg: "linear-gradient(135deg,#0f0404 0%,#200808 100%)",
-    badges: ["new"],
-    rating: 4.7, reviews: 67000,
-    price: 29, oldPrice: 49, period: "one-time",
-    featured: false,
-    description: "ScreenCast Pro records your screen, webcam, and all audio sources simultaneously. Instantly trim, annotate, zoom, and add callouts to recordings. Export to MP4, GIF, or WebM and share via a private link in one click — no account required for viewers.",
-    features: [
-      "Screen + webcam + audio capture",
-      "Annotation tools (arrows, highlights)",
-      "Zoom & pan while recording",
-      "Instant trim & cut editor",
-      "Export to MP4, GIF, WebM",
-      "Private shareable link upload",
-      "Schedule & auto-start recording",
-      "Keyboard shortcut customization"
-    ],
-    tags: ["Screen + Webcam", "Annotate", "GIF Export", "One-click Share"],
+    tags: ["4K/8K Repair", "MP4/MOV/AVI", "Drone Footage", "Batch Repair"],
     popular: 80
   },
 
-  /* ══ BACKUP ══════════════════════════════════════════ */
+  /* ══ 5. CORRUPT FILE RECOVERY ═══════════════════════ */
   {
-    id: 17,
-    name: "CloudVault",
-    tagline: "Unlimited encrypted cloud backup — set & forget",
-    category: "backup",
-    platforms: ["Windows", "Mac"],
-    icon: "fa-solid fa-cloud-arrow-up",
-    iconBg: "#050f25", iconColor: "#7dd3fc",
-    bannerBg: "linear-gradient(135deg,#030918 0%,#050f25 100%)",
-    badges: ["popular", "sale"],
-    rating: 4.7, reviews: 118000,
-    price: 7, oldPrice: 12, period: "mo",
+    id: 4,
+    name: "FileForge",
+    tagline: "Recover & repair any type of corrupted file",
+    category: "data-recovery",
+    platforms: ["Windows"],
+    icon: "fa-solid fa-file-circle-exclamation",
+    iconBg: "#200508", iconColor: "#fc8181",
+    bannerBg: "linear-gradient(135deg,#100303 0%,#200508 100%)",
+    badges: ["new"],
+    rating: 4.6, reviews: 31000,
+    price: 39, oldPrice: 59, period: "one-time",
     featured: false,
-    description: "CloudVault runs silently in the background, continuously backing up everything — including external drives and network shares — to our geo-redundant cloud. AES-256 encryption happens on your device before upload. Restore any file version from the past 1 year.",
+    description: "FileForge handles the files other recovery tools can't touch — corrupted Word documents, broken Excel spreadsheets, damaged PDFs, corrupt ZIP archives, and more. The deep repair engine reconstructs file structures byte-by-byte to extract as much data as possible.",
     features: [
-      "Unlimited storage (computers + externals)",
-      "Continuous background backup",
-      "AES-256 client-side encryption",
-      "1-year version history",
-      "External drive & NAS backup",
-      "Mobile app for remote access",
-      "Drive restore service (USB/HDD shipped)",
-      "SOC2 Type II certified"
+      "Word, Excel, PowerPoint repair",
+      "PDF & ZIP archive repair",
+      "Access database (.mdb) recovery",
+      "PST / Outlook email file repair",
+      "AutoCAD drawing file repair",
+      "Partial data extraction from broken files",
+      "Drag-and-drop interface",
+      "Supports 150+ file formats"
     ],
-    tags: ["Unlimited", "Continuous", "Encrypted", "Version History"],
-    popular: 86
+    tags: ["Office Files", "PDF Repair", "ZIP Archives", "150+ Formats"],
+    popular: 74
   },
+
+  /* ══ 6. CCTV FOOTAGE RECOVERY ═══════════════════════ */
   {
-    id: 18,
-    name: "SnapDisk",
-    tagline: "Full disk image backup with ransomware shield",
-    category: "backup",
-    platforms: ["Windows", "Mac"],
-    icon: "fa-solid fa-camera-retro",
-    iconBg: "#1a0a02", iconColor: "#fdba74",
-    bannerBg: "linear-gradient(135deg,#0e0501 0%,#1a0a02 100%)",
-    badges: ["pro"],
-    rating: 4.8, reviews: 78000,
-    price: 39.99, oldPrice: 59.99, period: "yr",
+    id: 5,
+    name: "CCTVRecover",
+    tagline: "Recover deleted or overwritten CCTV & DVR footage",
+    category: "data-recovery",
+    platforms: ["Windows"],
+    icon: "fa-solid fa-video",
+    iconBg: "#051528", iconColor: "#7dd3fc",
+    bannerBg: "linear-gradient(135deg,#030918 0%,#051528 100%)",
+    badges: ["hot"],
+    rating: 4.7, reviews: 27400,
+    price: 69, oldPrice: 99, period: "one-time",
     featured: false,
-    description: "SnapDisk takes full disk images you can restore bare-metal in minutes. Incremental backups after the first run are fast and small. The integrated ransomware shield monitors for unusual encryption activity and rolls back changes before they spread.",
+    description: "CCTVRecover is built exclusively for CCTV, NVR, and DVR systems. It recovers deleted, overwritten, or corrupted surveillance footage from Hikvision, Dahua, Axis, and 200+ DVR brands. Supports proprietary DVR file systems and exports recovered clips to standard MP4.",
     features: [
-      "Full disk image backup",
-      "Incremental & differential modes",
-      "Bare-metal restore to different hardware",
-      "AI ransomware shield (real-time)",
-      "Backup to local, NAS, or cloud",
-      "Bootable recovery media (USB/ISO)",
-      "Disk clone for SSD upgrades",
-      "AES-256 backup encryption"
+      "200+ DVR/NVR brand support",
+      "Hikvision, Dahua & Axis compatible",
+      "Proprietary DVR file system scan",
+      "Recover from formatted DVR HDDs",
+      "Export recovered clips to MP4",
+      "Timestamp & camera ID preserved",
+      "Night-vision & IR footage recovery",
+      "Supports H.264, H.265 & MPEG-4"
     ],
-    tags: ["Disk Image", "Bare-Metal Restore", "Ransomware Shield", "Bootable"],
+    tags: ["200+ DVR Brands", "Hikvision/Dahua", "H.264/H.265", "MP4 Export"],
     popular: 82
   },
 
-  /* ══ PDF & DOCS ══════════════════════════════════════ */
+  /* ══ 7. SCREEN RECORDER WITH STEP LOGGING ═══════════ */
   {
-    id: 19,
-    name: "DocForge",
-    tagline: "All-in-one PDF editor, converter & e-sign platform",
-    category: "pdf-docs",
-    platforms: ["Windows", "Mac", "Web"],
-    icon: "fa-solid fa-file-pdf",
-    iconBg: "#200505", iconColor: "#fc8181",
-    bannerBg: "linear-gradient(135deg,#100303 0%,#200505 100%)",
-    badges: ["popular"],
-    rating: 4.7, reviews: 234000,
-    price: 7.99, oldPrice: 14.99, period: "mo",
+    id: 6,
+    name: "ScreenLog Pro",
+    tagline: "Screen recorder that auto-logs every action as steps",
+    category: "screen-recorder",
+    platforms: ["Windows"],
+    icon: "fa-solid fa-circle-dot",
+    iconBg: "#200808", iconColor: "#f87171",
+    bannerBg: "linear-gradient(135deg,#0f0404 0%,#200808 100%)",
+    badges: ["new", "hot"],
+    rating: 4.8, reviews: 19600,
+    price: 39, oldPrice: 59, period: "one-time",
     featured: false,
-    description: "DocForge handles every PDF task in one app: edit text and images directly in PDFs, convert to/from Word/Excel/PowerPoint, merge, split, compress, OCR scan, and collect legally-binding e-signatures. No quality loss on conversion.",
+    description: "ScreenLog Pro does more than record your screen — it automatically captures every click, keystroke, and window change as numbered step annotations overlaid on the video. Perfect for creating bug reports, software tutorials, IT documentation, and training materials.",
     features: [
-      "Direct PDF text & image editing",
-      "Convert PDF ↔ Word, Excel, PPT",
-      "OCR for scanned documents",
-      "E-signature collection (legally binding)",
-      "Merge, split & compress",
-      "Batch processing (100+ files)",
-      "Password protection & redaction",
-      "AI document summarization"
+      "Full screen & region capture",
+      "Auto-annotated step-by-step logging",
+      "Click, keystroke & scroll detection",
+      "Webcam overlay support",
+      "System audio + microphone capture",
+      "Export to MP4, GIF or PDF step guide",
+      "Instant shareable link upload",
+      "Keyboard shortcut to start/stop"
     ],
-    tags: ["Edit PDFs", "OCR", "E-Signature", "Batch Processing"],
-    popular: 90
+    tags: ["Step Logging", "Auto-Annotate", "PDF Export", "Bug Reports"],
+    popular: 86
   },
 
-  /* ══ BUSINESS ════════════════════════════════════════ */
+  /* ══ 8. DATA WIPING TOOL ════════════════════════════ */
   {
-    id: 20,
-    name: "InvoiceNow",
-    tagline: "Smart invoicing, quotes & expense tracker for freelancers",
-    category: "business",
-    platforms: ["Web", "Windows", "Mac"],
-    icon: "fa-solid fa-file-invoice-dollar",
-    iconBg: "#062010", iconColor: "#34d399",
-    bannerBg: "linear-gradient(135deg,#030e08 0%,#062010 100%)",
-    badges: ["popular"],
-    rating: 4.8, reviews: 156000,
-    price: 9, oldPrice: 15, period: "mo",
+    id: 7,
+    name: "DataWipe Pro",
+    tagline: "Permanently wipe drives beyond any forensic recovery",
+    category: "system",
+    platforms: ["Windows"],
+    icon: "fa-solid fa-eraser",
+    iconBg: "#1a0e05", iconColor: "#fb923c",
+    bannerBg: "linear-gradient(135deg,#0e0703 0%,#1a0e05 100%)",
+    badges: ["pro"],
+    rating: 4.7, reviews: 34200,
+    price: 29, oldPrice: 49, period: "one-time",
     featured: false,
-    description: "InvoiceNow is the invoicing tool freelancers actually enjoy using. Create professional invoices in 30 seconds, send automatic payment reminders, track expenses with receipt scanning, and connect your bank to reconcile payments automatically.",
+    description: "DataWipe Pro permanently erases data from HDDs, SSDs, USB drives, and SD cards using DoD 5220.22-M, Gutmann, and custom wipe patterns — making recovery impossible. Generates a legally-compliant certificate of destruction for each wipe, required for GDPR and HIPAA compliance.",
     features: [
-      "Professional invoice builder",
-      "Automated payment reminders",
-      "Receipt scan & expense tracking",
-      "Bank account sync & reconciliation",
-      "Client portal for online payment",
-      "Recurring invoice scheduling",
-      "Tax estimation & reports",
-      "Multi-currency support (150+)"
+      "DoD 5220.22-M 7-pass wipe standard",
+      "35-pass Gutmann algorithm support",
+      "SSD-optimised secure erase (ATA)",
+      "Wipe free space without full format",
+      "Wipe specific files & folders only",
+      "Certificate of destruction (PDF)",
+      "GDPR & HIPAA compliance ready",
+      "Bootable WinPE wipe environment"
     ],
-    tags: ["Invoicing", "Expense Tracker", "Bank Sync", "Client Portal"],
-    popular: 88
-  },
-  {
-    id: 21,
-    name: "RankPilot",
-    tagline: "SEO & keyword research tool with competitor analysis",
-    category: "business",
-    platforms: ["Web"],
-    icon: "fa-solid fa-chart-line",
-    iconBg: "#051a28", iconColor: "#38bdf8",
-    bannerBg: "linear-gradient(135deg,#030d18 0%,#051a28 100%)",
-    badges: ["new"],
-    rating: 4.6, reviews: 48000,
-    price: 29, oldPrice: 49, period: "mo",
-    featured: false,
-    description: "RankPilot gives you a Semrush-level SEO suite without the enterprise price tag. Research keywords, audit your site, track daily rankings, reverse-engineer competitor strategies, and build backlinks — all in one dashboard refreshed daily.",
-    features: [
-      "20M+ keyword database",
-      "Daily rank tracking (unlimited keywords)",
-      "Full site SEO audit",
-      "Competitor gap analysis",
-      "Backlink research & monitor",
-      "Content brief generator",
-      "SERP history & trend data",
-      "White-label PDF reports"
-    ],
-    tags: ["Keyword Research", "Rank Tracking", "Site Audit", "Backlinks"],
-    popular: 76
-  },
-  {
-    id: 22,
-    name: "SocialForge",
-    tagline: "Social media scheduler & analytics for every platform",
-    category: "business",
-    platforms: ["Web"],
-    icon: "fa-solid fa-share-nodes",
-    iconBg: "#0a0820", iconColor: "#a5b4fc",
-    bannerBg: "linear-gradient(135deg,#050412 0%,#0a0820 100%)",
-    badges: ["sale"],
-    rating: 4.7, reviews: 112000,
-    price: 19, oldPrice: 39, period: "mo",
-    featured: false,
-    description: "SocialForge connects to every major platform — Instagram, TikTok, LinkedIn, X, Facebook, Pinterest, and YouTube — and lets you schedule content, monitor comments, track engagement, and view unified analytics from a single dashboard.",
-    features: [
-      "10+ platform integrations",
-      "Visual content calendar",
-      "AI caption & hashtag generator",
-      "Best-time-to-post recommendations",
-      "Unified inbox for all comments/DMs",
-      "Competitor engagement benchmarking",
-      "Analytics dashboard & PDF exports",
-      "Team approval workflows"
-    ],
-    tags: ["10+ Platforms", "AI Captions", "Analytics", "Team Workflows"],
-    popular: 84
-  },
-  {
-    id: 23,
-    name: "MailBlast",
-    tagline: "Email marketing automation with drag-and-drop builder",
-    category: "business",
-    platforms: ["Web"],
-    icon: "fa-solid fa-envelope-open-text",
-    iconBg: "#200a05", iconColor: "#fca5a5",
-    bannerBg: "linear-gradient(135deg,#0f0503 0%,#200a05 100%)",
-    badges: ["free"],
-    rating: 4.6, reviews: 89000,
-    price: 0, oldPrice: null, period: "free-tier",
-    featured: false,
-    description: "MailBlast's free tier lets you send 10,000 emails/month to 1,000 contacts — no credit card needed. Build stunning email campaigns with a drag-and-drop editor, automate sequences, A/B test subject lines, and track opens, clicks, and revenue in real time.",
-    features: [
-      "Free up to 1,000 contacts",
-      "Drag-and-drop email builder",
-      "Marketing automation workflows",
-      "A/B testing (subject line, content)",
-      "Real-time open & click tracking",
-      "E-commerce revenue attribution",
-      "Landing page builder",
-      "Transactional email API"
-    ],
-    tags: ["Free Tier", "Drag & Drop", "Automations", "A/B Testing"],
-    popular: 91
+    tags: ["DoD Standard", "Gutmann 35-pass", "Certificate", "GDPR/HIPAA"],
+    popular: 78
   }
+
 ];
 
 // ─────────────────────────────────────────────────────
@@ -719,10 +286,6 @@ function renderProducts(list) {
   const grid = document.getElementById("productsGrid");
   const count = document.getElementById("productCount");
 
-  const total = products.filter(p => {
-    if (currentFilter !== "all" && p.category !== currentFilter) return false;
-    return true;
-  }).length;
   count.textContent = `Showing ${list.length} of ${products.length} products`;
 
   if (list.length === 0) {
@@ -1051,7 +614,6 @@ function animateCountUp() {
   });
 }
 
-// Trigger count-up when section enters viewport
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { animateCountUp(); observer.disconnect(); } });
 }, { threshold: 0.3 });

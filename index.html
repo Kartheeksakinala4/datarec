@@ -31,26 +31,15 @@
 
     <div class="nav-search">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" id="globalSearch" placeholder="Search 24+ software tools…" autocomplete="off" />
+      <input type="text" id="globalSearch" placeholder="Search 8 recovery & utility tools…" autocomplete="off" />
       <kbd>⌘K</kbd>
     </div>
 
     <div class="nav-links">
-      <a href="#products" onclick="filterByCategory('all')">All Products</a>
-      <a href="#" onclick="filterByCategory('data-recovery')">Recovery</a>
-      <a href="#" onclick="filterByCategory('ai-tools')">AI Tools</a>
-      <a href="#" onclick="filterByCategory('security')">Security</a>
-      <div class="nav-dropdown">
-        <a href="#">More <i class="fa-solid fa-chevron-down" style="font-size:10px"></i></a>
-        <div class="dropdown-menu">
-          <a href="#" onclick="filterByCategory('productivity')"><i class="fa-solid fa-rocket"></i> Productivity</a>
-          <a href="#" onclick="filterByCategory('media')"><i class="fa-solid fa-photo-film"></i> Media & Design</a>
-          <a href="#" onclick="filterByCategory('system')"><i class="fa-solid fa-gear"></i> System Tools</a>
-          <a href="#" onclick="filterByCategory('backup')"><i class="fa-solid fa-cloud-arrow-up"></i> Backup</a>
-          <a href="#" onclick="filterByCategory('pdf-docs')"><i class="fa-solid fa-file-pdf"></i> PDF & Docs</a>
-          <a href="#" onclick="filterByCategory('business')"><i class="fa-solid fa-briefcase"></i> Business</a>
-        </div>
-      </div>
+      <a href="#products" onclick="filterByCategory('all')">All Tools</a>
+      <a href="#" onclick="filterByCategory('data-recovery')">Data Recovery</a>
+      <a href="#" onclick="filterByCategory('screen-recorder')">Screen Recorder</a>
+      <a href="#" onclick="filterByCategory('system')">System Tools</a>
     </div>
 
     <div class="nav-actions">
@@ -73,18 +62,18 @@
     <div class="hero-content">
       <div class="hero-eyebrow">
         <span class="eyebrow-dot"></span>
-        24 Professional Software Tools
+        8 Professional Recovery & Utility Tools
         <span class="eyebrow-sep">·</span>
-        One Marketplace
+        Windows Software
       </div>
-      <h1>The Smartest Software<br /><span class="gradient-text">You'll Ever Buy</span></h1>
-      <p>From data recovery and AI writing assistants to video editors, VPNs, and PDF tools — every category covered. Built by indie developers, priced for everyone.</p>
+      <h1>Recover. Protect.<br /><span class="gradient-text">Stay in Control.</span></h1>
+      <p>From HDD/SSD data recovery and CCTV footage rescue to secure data wiping and screen logging — every recovery need covered in one place.</p>
       <div class="hero-cta">
         <button class="btn-primary btn-xl" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-          <i class="fa-solid fa-store"></i> Browse All Software
+          <i class="fa-solid fa-store"></i> Browse All Tools
         </button>
-        <button class="btn-ghost btn-xl" onclick="filterByCategory('ai-tools')">
-          <i class="fa-solid fa-robot"></i> Explore AI Tools
+        <button class="btn-ghost btn-xl" onclick="filterByCategory('data-recovery')">
+          <i class="fa-solid fa-hard-drive"></i> Data Recovery Tools
         </button>
       </div>
       <div class="hero-trust">
@@ -104,47 +93,42 @@
       <div class="app-grid">
         <div class="app-tile tile-blue" style="--delay:0s">
           <i class="fa-solid fa-hard-drive"></i>
-          <span>RecoverX</span>
+          <span>DriveRevive</span>
           <div class="tile-glow"></div>
         </div>
-        <div class="app-tile tile-purple" style="--delay:0.1s">
-          <i class="fa-solid fa-robot"></i>
-          <span>WordMind</span>
+        <div class="app-tile tile-teal" style="--delay:0.1s">
+          <i class="fa-solid fa-memory"></i>
+          <span>FlashRescue</span>
           <div class="tile-glow"></div>
         </div>
-        <div class="app-tile tile-green" style="--delay:0.2s">
-          <i class="fa-solid fa-shield-halved"></i>
-          <span>GuardCore</span>
+        <div class="app-tile tile-purple" style="--delay:0.2s">
+          <i class="fa-solid fa-images"></i>
+          <span>PhotoRevive</span>
           <div class="tile-glow"></div>
         </div>
         <div class="app-tile tile-orange" style="--delay:0.3s">
-          <i class="fa-solid fa-clapperboard"></i>
-          <span>ClipForge</span>
+          <i class="fa-solid fa-film"></i>
+          <span>VideoRescue</span>
           <div class="tile-glow"></div>
         </div>
         <div class="app-tile tile-pink" style="--delay:0.4s">
-          <i class="fa-solid fa-file-pdf"></i>
-          <span>DocForge</span>
+          <i class="fa-solid fa-file-circle-exclamation"></i>
+          <span>FileForge</span>
           <div class="tile-glow"></div>
         </div>
-        <div class="app-tile tile-teal" style="--delay:0.5s">
-          <i class="fa-solid fa-key"></i>
-          <span>VaultKey</span>
+        <div class="app-tile tile-green" style="--delay:0.5s">
+          <i class="fa-solid fa-video"></i>
+          <span>CCTVRecover</span>
           <div class="tile-glow"></div>
         </div>
-        <div class="app-tile tile-yellow" style="--delay:0.6s">
-          <i class="fa-solid fa-rocket"></i>
-          <span>FlowDesk</span>
+        <div class="app-tile tile-red" style="--delay:0.6s">
+          <i class="fa-solid fa-circle-dot"></i>
+          <span>ScreenLog</span>
           <div class="tile-glow"></div>
         </div>
-        <div class="app-tile tile-red" style="--delay:0.7s">
-          <i class="fa-solid fa-cloud-arrow-up"></i>
-          <span>CloudVault</span>
-          <div class="tile-glow"></div>
-        </div>
-        <div class="app-tile tile-indigo" style="--delay:0.8s">
-          <i class="fa-solid fa-palette"></i>
-          <span>DesignFlow</span>
+        <div class="app-tile tile-yellow" style="--delay:0.7s">
+          <i class="fa-solid fa-eraser"></i>
+          <span>DataWipe</span>
           <div class="tile-glow"></div>
         </div>
       </div>
@@ -178,29 +162,11 @@
       <button class="cat-pill" data-cat="data-recovery" onclick="filterByCategory('data-recovery')">
         <i class="fa-solid fa-hard-drive"></i> Data Recovery
       </button>
-      <button class="cat-pill" data-cat="ai-tools" onclick="filterByCategory('ai-tools')">
-        <i class="fa-solid fa-robot"></i> AI Tools
-      </button>
-      <button class="cat-pill" data-cat="security" onclick="filterByCategory('security')">
-        <i class="fa-solid fa-shield-halved"></i> Security
-      </button>
-      <button class="cat-pill" data-cat="productivity" onclick="filterByCategory('productivity')">
-        <i class="fa-solid fa-rocket"></i> Productivity
-      </button>
-      <button class="cat-pill" data-cat="media" onclick="filterByCategory('media')">
-        <i class="fa-solid fa-photo-film"></i> Media & Design
+      <button class="cat-pill" data-cat="screen-recorder" onclick="filterByCategory('screen-recorder')">
+        <i class="fa-solid fa-circle-dot"></i> Screen Recorder
       </button>
       <button class="cat-pill" data-cat="system" onclick="filterByCategory('system')">
         <i class="fa-solid fa-gear"></i> System Tools
-      </button>
-      <button class="cat-pill" data-cat="backup" onclick="filterByCategory('backup')">
-        <i class="fa-solid fa-cloud-arrow-up"></i> Backup
-      </button>
-      <button class="cat-pill" data-cat="pdf-docs" onclick="filterByCategory('pdf-docs')">
-        <i class="fa-solid fa-file-lines"></i> PDF & Docs
-      </button>
-      <button class="cat-pill" data-cat="business" onclick="filterByCategory('business')">
-        <i class="fa-solid fa-briefcase"></i> Business
       </button>
     </div>
     <div class="sort-controls">
@@ -423,13 +389,9 @@
         <h4>Categories</h4>
         <ul>
           <li><a href="#" onclick="filterByCategory('data-recovery')">Data Recovery</a></li>
-          <li><a href="#" onclick="filterByCategory('ai-tools')">AI Tools</a></li>
-          <li><a href="#" onclick="filterByCategory('security')">Security & Privacy</a></li>
-          <li><a href="#" onclick="filterByCategory('productivity')">Productivity</a></li>
-          <li><a href="#" onclick="filterByCategory('media')">Media & Design</a></li>
-          <li><a href="#" onclick="filterByCategory('system')">System Utilities</a></li>
-          <li><a href="#" onclick="filterByCategory('backup')">Backup Solutions</a></li>
-          <li><a href="#" onclick="filterByCategory('business')">Business Tools</a></li>
+          <li><a href="#" onclick="filterByCategory('screen-recorder')">Screen Recorder</a></li>
+          <li><a href="#" onclick="filterByCategory('system')">System Tools</a></li>
+          <li><a href="#" onclick="filterByCategory('all')">All Products</a></li>
         </ul>
       </div>
       <div class="footer-col">

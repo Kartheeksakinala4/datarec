@@ -91,7 +91,6 @@ a:hover { opacity: .8; }
 ═══════════════════════════════════════════════════════ */
 .announce-bar {
   background: linear-gradient(90deg, #1a2744 0%, #1a1035 50%, #1a2744 100%);
-  border-bottom: 1px solid rgba(59,130,246,.2);
   text-align: center;
   padding: 10px 24px;
   font-size: 13px;
